@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yes or No</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        color: rgb(29, 31, 23);
+    }
+    .container {
+        text-align: center;
+    }
+    .button {
+        display: inline-block;
+        width: 100px;
+        padding: 10px;
+        cursor: pointer;
+        margin-top: 20px; /* Adjust margin-top value as needed */
+        border-radius: 50%;
+        line-height: 80px;
+    }
+    #yes {
+        background-color: rgb(149, 42, 236);
+        color: white;
+    }
+    #no {
+        background-color: rgb(163, 43, 243);
+        color: white;
+    }
+    .line {
+        font-weight: bold; /* Make text bold */
+        font-size: 24px; /* Increase text size (adjust as needed) */
+        margin-bottom: 20px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="line">आप मीट मछली खाना छोड़ेंगे ?.</div>
+    <div id="yes" class="button">Yes</div>
+    <div id="no" class="button">No</div>
+</div>
+
+<script>
+    const yesButton = document.getElementById("yes");
+
+    yesButton.addEventListener("click", () => {
+        alert("अपने भक्ति मार्ग में जाने के लिए एक कदम बढ़ाया है !");
+        const alertBox = document.querySelector(".alert");
+        alertBox.style.fontSize = "30px";    
+    });
+
+    const noButton = document.getElementById("no");
+
+    noButton.addEventListener("click", () => {
+        const maxX = window.innerWidth - noButton.offsetWidth;
+        const maxY = window.innerHeight - noButton.offsetHeight;
+        const randomX = Math.floor(Math.random() * maxX);
+        const randomY = Math.floor(Math.random() * maxY);
+        
+        noButton.style.position = "absolute";
+        noButton.style.left = randomX + "px";
+        noButton.style.top = randomY + "px";
+        const noButton = document.getElementById("no");
+    });
+
+    noButton.addEventListener("mouseover", () => {
+        const maxX = window.innerWidth - noButton.offsetWidth;
+        const maxY = window.innerHeight - noButton.offsetHeight;
+        const randomX = Math.floor(Math.random() * maxX);
+        const randomY = Math.floor(Math.random() * maxY);
+        
+        noButton.style.position = "absolute";
+        noButton.style.left = randomX + "px";
+        noButton.style.top = randomY + "px";
+        
+    });
+</script>
+
+</body>
+</html>
